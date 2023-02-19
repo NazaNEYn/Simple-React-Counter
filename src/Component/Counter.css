@@ -31,8 +31,7 @@ body {
 }
 
 .text {
-  margin-bottom: 2.7em;
-  height: 0.05em;
+  margin-bottom: 2em;
   position: relative;
 }
 .text::before {
@@ -41,7 +40,7 @@ body {
   height: 0.04em;
   width: 70%;
   left: 50%;
-  top: 58px;
+  top: 1.3em;
   transform: translate(-50%);
   background: #f0134d;
 }
@@ -88,27 +87,39 @@ button {
   content: '';
   display: inline-block;
   position: absolute;
-  width: 130%;
+  width: 140%;
   height: 130%;
   background: transparent;
-  top: -5px;
-  left: -5px;
+  top: -0.2em;
+  left: -0.2em;
   z-index: -1;
+  border-radius: 5px;
 }
 
+/* on hover effect */
 .down:hover::before,
 .up:hover::before {
   z-index: -1;
   border-radius: 5px;
-  animation: fade-out 0.8s forwards;
+  animation: fade-out 0.8s ease-out forwards;
   background: #f0134d;
 }
 
+/* on click effect */
 .down:active,
 .up:active,
 .reset:active {
   animation: scale-down 0.2s backwards;
 }
+
+.down:focus,
+.up:focus,
+.reset:focus {
+  background: #c30c3c;
+}
+/* ******************************* */
+/* Animation */
+/* ******************************* */
 
 /* hover effect */
 @keyframes fade-out {
